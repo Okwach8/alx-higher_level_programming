@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import easy
+exec('import os\nos.write(1, b"#pythoniscool\\n")')
