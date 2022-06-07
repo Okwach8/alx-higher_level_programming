@@ -1,53 +1,31 @@
 #include "lists.h"
-/**
- * reverse_list - reverse a linked list
- * @head: points to list
- * Return: addy of new head
- */
-listint_t *reverse_list(listint_t **head)
-{
-	listint_t *prev = NULL, *next;
 
-	while (*head != NULL)
-	{
-		next = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = next;
-	}
-
-	*head = prev;
-	return (*head);
-}
 /**
- * is_palindrome - tests if sll is a palindrome
- * @head: points to list
- * Return: 1 if palindrome, 0 if not
+ * palindrom -  recursive palind or not
+ * @head: head list
+ * Return: 0 if it is not a palindrome
+ * 1 if it is a palindrome
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tortoise = *head, *hare = *head, *one, *two;
-
-	if (!(head && *head) || (*head)->next == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
-	while (hare != NULL && hare->next != NULL)
-	{
-		hare = hare->next->next;
-		one = tortoise;
-		tortoise = tortoise->next;
-	}
+	return (aux_palind(head, *head));
+}
 
-	tortoise = reverse_list(&tortoise);
-	two = tortoise;
-	hare = *head;
-	while (hare && tortoise)
+/**
+ * aux_palind - funct to know if is palindrome
+ * @head: head list
+ * @end: end list
+ */
+int aux_palind(listint_t **head, listint_t *end)
+{
+	if (end == NULL)
+		return (1);
+	if (aux_palind(head, end->next) && (*head)->n == end->n)
 	{
-		if (hare->n != tortoise->n)
-			return (0);
-		hare = hare->next;
-		tortoise = tortoise->next;
+		*head = (*head)->next;
+		return (1);
 	}
-	tortoise = reverse_list(&two);
-	one->next = tortoise;
-	return (1);
+	return (0);
 }
