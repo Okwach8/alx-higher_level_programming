@@ -29,7 +29,7 @@
 
 
 ### [7. Copy - Cut - Paste](./7-edges.py)
-* Complete this source code
+* Complete this source code.
 
 
 ### [8. Create a new sentence](./8-concat_edges.py)
