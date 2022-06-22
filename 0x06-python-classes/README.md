@@ -32,7 +32,7 @@
 
 
 ### [7. Singly linked list](./100-singly_linked_list.py)
-* Write a class Node that defines a node of a singly linked list by: 
+* Write a class Node that defines a node of a singly linked list
 
 
 ### [8. Print Square instance](./101-square.py)
