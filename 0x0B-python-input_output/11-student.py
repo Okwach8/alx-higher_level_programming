@@ -10,6 +10,15 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        """get dict"""
-        return self.__dict__.copy()
+    def to_json(self, attrs=None):
+        """get dict, names if only string"""
+        if type(attrs) is list and all([type(a) == str for a in attrs]):
+            return {name: value for name, value in self.__dict__.items()
+                    if name in attrs}
+        else:
+            return self.__dict__.copy()
+
+    def reload_from_json(self, json):
+        '''gets dict attr from json.'''
+        for key, value in json.items():
+            self.__dict__[key] = value

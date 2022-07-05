@@ -1,20 +1,15 @@
 #!/usr/bin/python3
-"""module for add_item"""
-import json
-import os.path
-import sys
+"""student class module"""
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
 
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+class Student:
+    """a class we shall json"""
+    def __init__(self, first_name, last_name, age):
+        """init method"""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-thing = "add_item.json"
-json = []
-
-if os.path.exists(thing):
-    json = load_from_json_file(thing)
-
-for arg in range(1, len(sys.argv)):
-    json.append(sys.argv[arg])
-
-save_to_json_file(json, thing)
+    def to_json(self):
+        """get dict"""
+        return self.__dict__.copy()
