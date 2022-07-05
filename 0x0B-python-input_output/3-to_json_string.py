@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""write_file module"""
+"""to_json string module"""
+import json
 
 
-def write_file(filename="", text=""):
-    """writes a string to a text file (UTF8) and returns the number of
-        characters written"""
-    with open(filename, "w", encoding="utf-8") as content:
-        return content.write(text)
+def to_json_string(my_obj):
+    """returns the JSON representation of an object (string)"""
+    return json.dumps(my_obj)
