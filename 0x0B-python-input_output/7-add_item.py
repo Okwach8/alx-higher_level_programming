@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""module for add_item"""
-import json
+""" 9-add_item """
 import os.path
-import sys
-
+from sys import argv
 save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-
 load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
-thing = "add_item.json"
-json = []
+file = "add_item.json"
 
-if os.path.exists(thing):
-    json = load_from_json_file(thing)
+json_list = []
+if os.path.exists(file):
+    json_list = load_from_json_file(file)
 
-for arg in range(1, len(sys.argv)):
-    json.append(sys.argv[arg])
+for i in range(1, len(argv)):
+    json_list.append(argv[i])
 
-save_to_json_file(json, thing)
+save_to_json_file(json_list, file)
