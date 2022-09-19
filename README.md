@@ -1,6 +1,10 @@
-<img src="https://rajivpandit.files.wordpress.com/2013/02/python.png" width="600">
+## alx-higher_level_programming
 
-# Higher-level programming
+# This repository contains directories each corresponding to a high-level language project
 
-## Welcome
-This repository contains introductory projects for higher-level programming. 
+--------------------------------------
+# In these projects, we cover everything from the basics of Python and Javascript (Node), as well as SQL (with MySQL) to more advanced topics.
+---------------------------------
+---------------------------------
+
+-----------------------------------------------
